@@ -50,7 +50,7 @@ public class TesteCliente {
         String numeroInstalacao = leia.next();
 
 
-        System.out.println("\n Informe o valor da conta: ");
+        System.out.println("\n Informe o valor da fatura: ");
         double valorConta = leia.nextDouble();
 
 
@@ -135,7 +135,7 @@ public class TesteCliente {
 		if(regiao == 2) {
 		List<String> ZonaNorte = new ArrayList<String>();
 
-		ZonaNorte.add("\n Rua José Bernardo Pinto, n. 1480 - Vila Guilherme");
+		ZonaNorte.add("\n Rua José Bernardo Pinto, n. 1480");
 		ZonaNorte.add("\n Rua Eduardo Vicente Nasser, n. 519");
 		ZonaNorte.add("\n Avenida Paulo Lincoln do Valle Pontin, n. 550");
 		ZonaNorte.add("\n Rua Itaiquara, n. 237");
@@ -149,7 +149,7 @@ public class TesteCliente {
         System.out.printf("\n--------------------------------------------------------------------------");
         fisica.imprimirInfo();
         System.out.printf("\n Valor de desconto ganho com a entregado do lixo foi de: R$%2.2f",fisica.pesoLixo(kgLixo));
-        System.out.printf("\n O novo valor da conta de energia será de: R$%2.2f", novoValor);
+        System.out.printf("\n O novo valor da fatura de energia será de: R$%2.2f", novoValor);
         System.out.println();
         
         System.out.printf("\n--------------------------------------------------------------------------");
