@@ -1,13 +1,18 @@
 package ProjetoEnergiaLimpa;
 
-public class Fisica extends Cliente implements Interface {
-
+public class Fisica extends Cliente implements Interface{
+	
 	private String cpf;
 	private float  renda;
 	
+	//Construtor 
 	public Fisica( String nome, String telefone, String endereco, String numeroInstalacao,
-			float consumoKwh, double valorConta, String cpf, float renda) {	
-		super(nome, telefone, endereco, numeroInstalacao, consumoKwh, valorConta);
+			double valorConta, String cpf, float renda, double kgLixo)
+
+	
+	{	
+		super(nome, telefone, endereco, numeroInstalacao,
+         valorConta, kgLixo);
 		
 		this.cpf = cpf;
 		this.renda= renda;
@@ -31,15 +36,17 @@ public class Fisica extends Cliente implements Interface {
 
 	@Override
 	public double reducaoValor() 
-	{
-		double desconto = valorConta - (valorConta * 0.15);
-				return desconto;
+	{	getKgLixo();	
+		double desconto = valorConta - pesoLixo(kgLixo);
+						return desconto;
+								
 	}
-	
 	public void imprimirInfo() {
-		System.out.println("Nome do usuário: " + nome + "\nTelefone: " + telefone + "\nEndereço: "+ endereco
-				+"\nNúmero da instalação: " + numeroInstalacao + "\nConsumo em KWh: " + consumoKwh
-				+"\nValor da conta " + valorConta);	
+		System.out.printf("\n Cliente: "+ nome + "\n Telefone: "+telefone+"\n Endereco: "+endereco
+				+"\n Número da instalação: "+numeroInstalacao+"\n Valor da conta R$%2.2f",valorConta);
+		
 	}
+
+	
 
 }
