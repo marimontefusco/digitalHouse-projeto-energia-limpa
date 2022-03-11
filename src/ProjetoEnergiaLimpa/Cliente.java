@@ -1,25 +1,28 @@
 package ProjetoEnergiaLimpa;
 
+import java.text.NumberFormat;
+
 public class Cliente {
+
 
 	//ATRIBUTOS
     protected String nome;
     protected String telefone;
     protected String endereco;
-    protected String  numeroInstalacao;
-    protected float consumoKwh;
+    protected String  numeroInstalacao;    
     protected double valorConta;
+    protected double kgLixo;
     
     
     //CONSTRUTOR
     public Cliente(String nome, String telefone, String endereco, String numeroInstalacao,
-            float consumoKwh, double valorConta) {
+            double valorConta, double kgLixo) {
         this.nome = nome;
         this.telefone = telefone;
         this.endereco = endereco;
-        this.numeroInstalacao = numeroInstalacao;
-        this.consumoKwh = consumoKwh;
+        this.numeroInstalacao = numeroInstalacao;       
         this.valorConta = valorConta;
+        this.kgLixo = kgLixo;
     }
 
 
@@ -63,16 +66,6 @@ public class Cliente {
 	}
 
 
-	public float getConsumoKwh() {
-		return consumoKwh;
-	}
-
-
-	public void setConsumoKwh(float consumoKwh) {
-		this.consumoKwh = consumoKwh;
-	}
-
-
 	public double getValorConta() {
 		return valorConta;
 	}
@@ -81,19 +74,24 @@ public class Cliente {
 	public void setValorConta(double valorConta) {
 		this.valorConta = valorConta;
 	}
-
-
-	public void verificarInstalacao() {
-        if (getNumeroInstalacao().length() != 10) {
-
-            System.out.println("\nNúmero de instalação deve conter dez números. "
-                    + "\nPor favor, digite novamente o número da instalação: " + numeroInstalacao);
-
-            while (getNumeroInstalacao().length() != 10) {
-                System.out.println("\n Número de instalação deve conter dez números. " + "Por favor, digite novamente: "
-                        + numeroInstalacao);
-            }
-        }
-    }
 	
-} //end
+	
+
+
+	public double getKgLixo() {
+		return kgLixo;
+	}
+
+
+	public void setKgLixo(double kgLixo) {
+		this.kgLixo = kgLixo;
+	}
+
+
+	public double pesoLixo(double kgLixo) {
+		kgLixo += (kgLixo * 0.75);
+		 return kgLixo;
+	}
+	
+    
+}
