@@ -1,9 +1,9 @@
 package ProjetoEnergiaLimpa;//SUBCLASS
 
-//EXTENDENDO DA SUPERCLAS E IMPLEMENTANDO INTERFACE --> herança multipla
+//EXTENDENDO DA SUPERCLAS E IMPLEMENTANDO INTERFACE --> heranÃ§a multipla
 public class Fisica extends Cliente implements Interface{
 
-	//ATRIBUTOS DA PRÓRIA CLASSE
+	//ATRIBUTOS DA PRÃ“RIA CLASSE
 	private String cpf;
 	private float renda;
 	
@@ -19,7 +19,7 @@ public class Fisica extends Cliente implements Interface{
 	
 	
 
-	//GETTER AND SETTER --> GET = ACESSA E SET = MODIFICA -- SÃO MÉTODOS PARA PODER MANIPULAR OS ATRIBUTOS EM OUTRA CLASS
+	//GETTER AND SETTER --> GET = ACESSA E SET = MODIFICA -- SÃƒO MÃ‰TODOS PARA PODER MANIPULAR OS ATRIBUTOS EM OUTRA CLASS
 	public String getCpf() {
 		return cpf;
 	}
@@ -40,7 +40,7 @@ public class Fisica extends Cliente implements Interface{
 	}
 	
 	
-	//MÉTODOS DA INTERFACE
+	//MÃ‰TODOS DA INTERFACE
 	@Override
 	public double reducaoValor()
 	{
@@ -53,9 +53,14 @@ public class Fisica extends Cliente implements Interface{
 	@Override
 	public void imprimirInfo() 
 	{
-		System.out.printf("\n\n Cliente: "+ nome + "\n Telefone: "+telefone+"\n Endereço: "+endereco
-				+"\n Número da instalação: "+numeroInstalacao+"\n Valor da fatura: R$%2.2f",valorConta);
-		
-	}
+		System.out.printf("\n"
+				+ "\n DADOS DO CLIENTE: "
+				+ "\n\n Cliente: %s"
+				+ "\n Telefone: %s"
+				+ "\n EndereÃ§o: %s"
+				+ "\n NÃºmero de InstalaÃ§Ã£o: %s"
+				+ "\n Valor da fatura: R$%2.2f"
+				+ "\n Peso mensal do lixo: %2.0fkg",
+				nome, telefone, endereco, numeroInstalacao, valorConta, kgLixo);
 	
 }//END
